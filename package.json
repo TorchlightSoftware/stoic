@@ -1,0 +1,30 @@
+{
+  "name":"redgoose",
+    "description":"schemas for redis",
+    "version":"0.0.1",
+    "homepage":"http://github.com/wearefractal/redgoose",
+    "repository":"git://github.com/wearefractal/redgoose.git",
+    "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
+    "main":"./index.js",
+
+    "dependencies":{
+      "async":"*",
+      "hiredis":"*",
+      "redis":"*",
+      "coffee-script":"*"
+    },
+    "devDependencies":{
+      "mocha":"*",
+      "should":"*",
+      "node-log":"*"
+    },
+    "engines":{
+      "node":">= 0.6.0"
+    },
+    "licenses":[
+    {
+      "type":"MIT",
+      "url":"http://github.com/wearefractal/redgoose/raw/master/LICENSE"
+    }
+  ]
+}
