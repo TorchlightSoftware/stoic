@@ -1,24 +1,24 @@
 async = require 'async'
 should = require 'should'
-redgoose = require '../lib/main'
+stoic = require '../lib/main'
 
 describe 'simple schema', ->
   before ->
-    redgoose.init()
+    stoic.init()
   beforeEach (done) ->
     @schema =
       'user:!{id}':
         name: 'String'
         email: 'String'
 
-    redgoose.load @schema
+    stoic.load @schema
     done()
 
   it 'should load', (done) ->
-    should.exist redgoose.models.user
-    should.exist redgoose.models.user.name
+    should.exist stoic.models.user
+    should.exist stoic.models.user.name
 
-    name = redgoose.models.user.name
+    name = stoic.models.user.name
 
     user = {id: 1}
     name user

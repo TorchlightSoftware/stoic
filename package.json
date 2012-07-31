@@ -1,9 +1,9 @@
 {
-  "name":"redgoose",
+  "name":"stoic",
     "description":"schemas for redis",
     "version":"0.0.1",
-    "homepage":"http://github.com/wearefractal/redgoose",
-    "repository":"git://github.com/wearefractal/redgoose.git",
+    "homepage":"http://github.com/wearefractal/stoic",
+    "repository":"git://github.com/wearefractal/stoic.git",
     "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
     "main":"./index.js",
 
@@ -24,7 +24,7 @@
     "licenses":[
     {
       "type":"MIT",
-      "url":"http://github.com/wearefractal/redgoose/raw/master/LICENSE"
+      "url":"http://github.com/wearefractal/stoic/raw/master/LICENSE"
     }
   ]
 }

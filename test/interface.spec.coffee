@@ -1,18 +1,18 @@
 async = require 'async'
 should = require 'should'
-redgoose = require '../lib/main'
+stoic = require '../lib/main'
 
 describe 'schema with interface', ->
   before ->
-    redgoose.init()
+    stoic.init()
 
   beforeEach (done) ->
     @schema = require './examples/interface'
-    redgoose.load @schema
+    stoic.load @schema
     done()
 
   it 'should load', (done) ->
-    {User} = redgoose.models
+    {User} = stoic.models
 
     User.create {name: 'Jon'}, (err, res) ->
       should.exist res.id
@@ -24,7 +24,7 @@ describe 'schema with interface', ->
         done()
 
   it "should trigger 'after' callback", (done) ->
-    {User} = redgoose.models
+    {User} = stoic.models
 
     User.create {name: 'Jon', email: 'jon@gmail.com'}, (err, user) ->
       user.email.get (err, email) ->

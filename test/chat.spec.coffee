@@ -1,25 +1,25 @@
 async = require 'async'
 should = require 'should'
-redgoose = require '../lib/main'
+stoic = require '../lib/main'
 
 describe 'chat schema', ->
   before ->
-    redgoose.init()
+    stoic.init()
 
   beforeEach (done) ->
     @schema = require './examples/chat'
-    redgoose.load @schema
+    stoic.load @schema
     done()
 
   it 'should let me access allChats', (done) ->
-    {Chat} = redgoose.models
+    {Chat} = stoic.models
 
     Chat.allChats.add 'bar', (err, res) ->
       Chat.allChats.belongs 'bar', (err, res) ->
         done()
 
   it 'should let me access chat fields', (done) ->
-    {Chat} = redgoose.models
+    {Chat} = stoic.models
     Chat.create (err, chat) ->
 
       chat.history.rpush 'foo', ->
@@ -32,7 +32,7 @@ describe 'chat schema', ->
             done()
 
   it "should curry like nobody's business", (done) ->
-    {Chat} = redgoose.models
+    {Chat} = stoic.models
     Chat.create (err, chat) ->
 
       # perform some ops

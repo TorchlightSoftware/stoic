@@ -2,7 +2,7 @@
 
 <table>
 <tr>
-<td>Package</td><td>Redgoose</td>
+<td>Package</td><td>Stoic</td>
 </tr>
 <tr>
 <td>Description</td>
@@ -36,9 +36,9 @@ This would allow you to write your domain logic like so:
 
 ```coffee-script
 should = require 'should'
-redgoose = require 'redgoose'
+stoic = require 'stoic'
 schema = require './schema'
-{User} = redgoose.models
+{User} = stoic.models
 
 u = User.get(1)
 
@@ -75,7 +75,7 @@ module.exports = ['User', face, schema]
 
 ## What the hell is going on here?
 
-Well, looking at the schema above, there are a few things to notice.  The schema is a heiarchical namespace.  Each key extends the namespace within redis, and each value describes the type of data held there.  When Redgoose parses your schema, it will construct a set of decorators.  Decorators:
+Well, looking at the schema above, there are a few things to notice.  The schema is a heiarchical namespace.  Each key extends the namespace within redis, and each value describes the type of data held there.  When Stoic parses your schema, it will construct a set of decorators.  Decorators:
 
 * Are specific to a data type
 * Are used to attach Accessors to an object

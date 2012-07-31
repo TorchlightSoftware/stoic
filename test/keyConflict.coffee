@@ -1,20 +1,20 @@
 async = require 'async'
 should = require 'should'
-redgoose = require '../lib/main'
+stoic = require '../lib/main'
 
 describe 'multiple items', ->
   before ->
-    redgoose.init()
+    stoic.init()
 
   beforeEach (done) ->
     @schema = require './examples/chat'
-    redgoose.load @schema
+    stoic.load @schema
     done()
 
   it 'should not interfere with each other', (done) ->
 
     # make some chats
-    {Chat} = redgoose.models
+    {Chat} = stoic.models
     Chat.create (err, chat1) ->
       Chat.create (err, chat2) ->
 
