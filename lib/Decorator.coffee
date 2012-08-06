@@ -1,4 +1,4 @@
-{getType, tandoor} = require './util'
+{getType, tandoor, interpolate} = require './util'
 execute = require './execute'
 
 # construct a data accessor for a given key and type
@@ -22,12 +22,7 @@ module.exports = (basekey, typeName) ->
     #console.log "vars: #{vars}, op: #{op}, args: #{args}, next: #{typeof next}"
 
     # interpolate vars into key
-    key = basekey
-    while match = /!{\w+}/g.exec key
-      [match] = match
-      id = match.slice 2, -1
-      return next "Missing ID: #{id}" unless vars[id]?
-      key = basekey.replace match, vars[id]
+    key = interpolate basekey, vars
 
     #console.log 'key: ', key
     #console.log "op: [#{op}] args: #{args}"
