@@ -22,7 +22,8 @@ module.exports = (basekey, typeName) ->
     #console.log "vars: #{vars}, op: #{op}, args: #{args}, next: #{typeof next}"
 
     # interpolate vars into key
-    key = interpolate basekey, vars
+    [err, key] = interpolate basekey, vars
+    next err if err?
 
     #console.log 'key: ', key
     #console.log "op: [#{op}] args: #{args}"

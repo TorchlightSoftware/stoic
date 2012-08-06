@@ -36,7 +36,7 @@ module.exports =
     while token = /!{\w+}/g.exec template
       [token] = token
       varName = token.slice 2, -1
-      return next "Missing variable: #{varName}" unless vars[varName]?
+      return ["Missing variable: #{varName}"] unless vars[varName]?
       template = template.replace token, vars[varName]
 
-    template
+    [null, template]
