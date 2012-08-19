@@ -1,4 +1,4 @@
-{getType, tandoor, interpolate} = require './util'
+{base, getType, tandoor, interpolate} = require './util'
 execute = require './execute'
 
 # construct a data accessor for a given key and type
@@ -31,5 +31,5 @@ module.exports = (basekey, typeName) ->
     # perform data operation
     execute lifecycle, origOp, op, key, args, vars, next
 
-  [_..., localKey] = basekey.split ':'
+  [_..., localKey] = base(basekey).split ':'
   template accessor, localKey
