@@ -12,8 +12,10 @@ module.exports =
   # load a model from a schema def
   load: (schema) ->
     throw new Error "No redis client is loaded." unless @client?
-    @models[k] = v for k, v of process schema
-    true
+    throw new Error "Please provide a schema" unless schema?
+    model = process schema
+    @models[model.name] = model
+    return model
 
   # load custom types in
   loadTypes: (types) ->

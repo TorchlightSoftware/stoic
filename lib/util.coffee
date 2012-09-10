@@ -1,7 +1,7 @@
-getType = (obj) -> Object.prototype.toString.call obj
+getType = (obj) -> Object.prototype.toString.call(obj).slice 8, -1
 
 compact = (arr) ->
-  return (item for item in arr when not (getType(item) is '[object Undefined]'))
+  return (item for item in arr when not (getType(item) is 'Undefined'))
 
 curry = (fn, args...) ->
   args = compact args
@@ -26,7 +26,7 @@ module.exports =
   # yet you'll get a curried function instead of premature execution.
   tandoor: (meat) ->
     naan = (args..., next) ->
-      unless getType(next) == '[object Function]'
+      unless getType(next) == 'Function'
         return curry naan, args..., next
       meat args..., next
 
