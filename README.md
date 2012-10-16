@@ -135,7 +135,7 @@ Hit me up on twitter: @qbitmage
 
 (MIT License)
 
-Copyright (c) 2012 Fractal <contact@wearefractal.com>
+Copyright (c) 2012 Torchlight Software <info@TorchlightSoftware.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
