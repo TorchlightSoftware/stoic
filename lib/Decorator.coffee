@@ -1,4 +1,4 @@
-{base, getType, tandoor, interpolate} = require './util'
+{base, tandoor, interpolate} = require './util'
 execute = require './execute'
 
 # construct a data accessor for a given key and type

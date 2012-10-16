@@ -12,12 +12,12 @@ walk = (keypath, node) ->
   switch nodeType
 
     # Define or reference a type
-    when '[object Array]'
+    when 'Array'
       [name, face, schema] = node
       return Model name, face, walk(null, schema)
 
     # Append to key namespace
-    when '[object Object]'
+    when 'Object'
       obj = {}
       for k, v of node
         newpath = if keypath? then "#{keypath}:#{k}" else k
@@ -26,7 +26,7 @@ walk = (keypath, node) ->
       return obj
 
     # Reference a type with no options
-    when '[object String]'
+    when 'String'
       return Decorator keypath, node
 
     else throw new Error "Unexpected node type #{nodeType} while parsing schema.\nKey: #{k}\nVal: #{v}"

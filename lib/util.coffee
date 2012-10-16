@@ -1,17 +1,11 @@
-getType = (obj) -> Object.prototype.toString.call obj
+module.exports = util =
 
-compact = (arr) ->
-  return (item for item in arr when not (getType(item) is '[object Undefined]'))
+  getType: (obj) -> Object.prototype.toString.call(obj).slice 8, -1
 
-curry = (fn, args...) ->
-  args = compact args
-  fn.bind fn.prototype, args...
+  compact: (arr) ->
+    return (item for item in arr when not (util.getType(item) is 'Undefined'))
 
-module.exports =
-
-  getType: getType
-  compact: compact
-  curry: curry
+  curry: (fn, args...) -> fn.bind fn.prototype, args...
 
   base: (key) ->
     key.replace /:?!{\w+}/g, ''
@@ -24,11 +18,12 @@ module.exports =
   # given a function, wrap it in naan and curry, then cook it
   # In English: Enables autocurrying, so if you haven't provided the callback
   # yet you'll get a curried function instead of premature execution.
-  tandoor: (meat) ->
-    naan = (args..., next) ->
-      unless getType(next) == '[object Function]'
-        return curry naan, args..., next
-      meat args..., next
+  tandoor: (fn) ->
+    naan = (args...) ->
+      [_..., last] = args
+      unless (fn.length > 0 and args.length >= fn.length) or (fn.length == 0 and util.getType(last) is 'Function')
+        return util.curry naan, args...
+      fn args...
 
     return naan
 
