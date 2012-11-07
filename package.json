@@ -1,7 +1,7 @@
 {
   "name":"stoic",
     "description":"schemas for redis",
-    "version":"0.0.3",
+    "version":"0.0.4",
     "homepage":"http://github.com/TorchlightSoftware/stoic",
     "repository":"git://github.com/TorchlightSoftware/stoic.git",
     "author":"Fractal <info@TorchlightSoftware.com> (http://TorchlightSoftware.com/)",
