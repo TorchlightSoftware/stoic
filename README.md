@@ -1,4 +1,4 @@
-## Information
+# Stoic
 
 <table>
 <tr>
