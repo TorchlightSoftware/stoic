@@ -28,10 +28,13 @@ module.exports = util =
     return naan
 
   interpolate: (template, vars) ->
+    return [new Error 'key must be a string'] unless util.getType(template) is 'String'
+    return [new Error 'vars must be an object'] unless util.getType(vars) is 'Object'
+
     while token = /!{\w+}/g.exec template
       [token] = token
       varName = token.slice 2, -1
-      return ["Missing variable: #{varName}"] unless vars[varName]?
+      return [new Error "Missing variable: #{varName}"] unless vars[varName]?
       template = template.replace token, vars[varName]
 
     [null, template]
