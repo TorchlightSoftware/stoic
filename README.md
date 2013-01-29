@@ -14,6 +14,8 @@
 </tr>
 </table>
 
+![Build Status](https://api.travis-ci.org/TorchlightSoftware/law.png)
+
 ## Description
 
 Duck Types?  No way!  Goose Types are for structured data.
