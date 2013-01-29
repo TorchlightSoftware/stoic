@@ -14,7 +14,7 @@
 </tr>
 </table>
 
-![Build Status](https://api.travis-ci.org/TorchlightSoftware/law.png)
+![Build Status](https://api.travis-ci.org/TorchlightSoftware/stoic.png)
 
 ## Description
 
