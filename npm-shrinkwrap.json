@@ -1,0 +1,68 @@
+{
+  "name": "stoic",
+  "version": "0.0.5",
+  "dependencies": {
+    "async": {
+      "version": "0.1.22",
+      "from": "async@*"
+    },
+    "hiredis": {
+      "version": "0.1.14",
+      "from": "hiredis@*"
+    },
+    "redis": {
+      "version": "0.7.2",
+      "from": "redis@*"
+    },
+    "coffee-script": {
+      "version": "1.3.3",
+      "from": "coffee-script@*"
+    },
+    "should": {
+      "version": "0.6.3",
+      "from": "should@*"
+    },
+    "node-log": {
+      "version": "0.0.3",
+      "from": "node-log@*",
+      "dependencies": {
+        "colors": {
+          "version": "0.6.0-1",
+          "from": "colors@*"
+        }
+      }
+    },
+    "mocha": {
+      "version": "1.2.2",
+      "from": "mocha@*",
+      "dependencies": {
+        "commander": {
+          "version": "0.6.1",
+          "from": "commander@0.6.1"
+        },
+        "growl": {
+          "version": "1.5.1",
+          "from": "growl@1.5.x"
+        },
+        "jade": {
+          "version": "0.26.3",
+          "from": "jade@0.26.3",
+          "dependencies": {
+            "mkdirp": {
+              "version": "0.3.0",
+              "from": "mkdirp@0.3.0"
+            }
+          }
+        },
+        "diff": {
+          "version": "1.0.2",
+          "from": "diff@1.0.2"
+        },
+        "debug": {
+          "version": "0.7.0",
+          "from": "debug@*"
+        }
+      }
+    }
+  }
+}
