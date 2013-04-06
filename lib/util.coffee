@@ -29,7 +29,7 @@ module.exports = util =
 
   interpolate: (template, vars) ->
     return [new Error 'key must be a string'] unless util.getType(template) is 'String'
-    return [new Error 'vars must be an object'] unless util.getType(vars) is 'Object'
+    vars = {} unless util.getType(vars) is 'Object'
 
     while token = /!{\w+}/g.exec template
       [token] = token

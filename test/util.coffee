@@ -11,7 +11,7 @@ describe 'interpolate', ->
       ['account:!{accountId}:session:!{sessionId}', {accountId: 1, sessionId: 5}, [null, 'account:1:session:5']]
       ['session:!{id}', {}, [new Error 'Missing variable: id']]
       [null, {}, [new Error 'key must be a string']]
-      ['', null, [new Error 'vars must be an object']]
+      ['', null, [null, '']]
     ]
 
     for scen in scenarios
